@@ -1,0 +1,88 @@
+<!-- books.fxml -->
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.image.ImageView?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.cdi.HelloController"
+            prefHeight="400.0" prefWidth="600.0">
+    <top>
+        <MenuBar BorderPane.alignment="TOP_CENTER">
+            <menus>
+                <Menu text="File">
+                    <items>
+                        <MenuItem text="New"/>
+                        <MenuItem text="Save"/>
+                        <MenuItem text="Load"/>
+                        <MenuItem text="Exit" fx:id="exit"/>
+                    </items>
+                </Menu>
+                <Menu text="Edit">
+                    <items>
+                        <MenuItem text="New"/>
+                        <MenuItem text="Save"/>
+                        <MenuItem text="Load"/>
+                        <MenuItem text="Exit"/>
+                    </items>
+                </Menu>
+                <Menu id="help" text="Help" >
+                    <items>
+                        <MenuItem fx:id="help"  text="About"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+    <center>
+        <VBox spacing="10" VBox.vgrow="ALWAYS">
+            <HBox spacing="10" VBox.vgrow="ALWAYS">
+                <padding>
+                    <Insets bottom="10" left="10" right="10" top="10"/>
+                </padding>
+                <ListView fx:id="bookList" prefWidth="200" VBox.vgrow="ALWAYS"/>
+                <VBox spacing="10" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
+                    <Label text="Book Preview"/>
+                    <TextArea fx:id="preview" editable="false" wrapText="true" VBox.vgrow="ALWAYS"/>
+                </VBox>
+                <VBox spacing="10" VBox.vgrow="ALWAYS">
+                    <Label text="Book Details"/>
+                    <TextField fx:id="title" promptText="Title"/>
+                    <TextField fx:id="isbn" promptText="ISBN"/>
+                    <TextField fx:id="author" promptText="Author"/>
+                    <TextField fx:id="year" promptText="Year"/>
+                    <TextField fx:id="pages" promptText="Pages"/>
+                    <TextArea fx:id="description" promptText="Description" VBox.vgrow="ALWAYS"/>
+                    <TextField fx:id="imageUrl" promptText="imageUrl"/>
+                    <ImageView fx:id="coverImage" fitWidth="200" fitHeight="200" preserveRatio="true"/>
+                    <HBox spacing="10">
+                        <Button fx:id="add" text="Add" onAction="#onButtonAddClick"/>
+                        <Button fx:id="edit" text="Edit" onAction="#onButtonEditClick" />
+                        <Button fx:id="delete" text="Delete" onAction="#onButtonDeleteClick"/>
+                    </HBox>
+                </VBox>
+            </HBox>
+            <HBox spacing="10">
+                <TextField fx:id="searchField" promptText="Search by ISBN or Title"/>
+                <Button fx:id="searchButton" text="Search" onAction="#onSearchButtonClick"/>
+            </HBox>
+        </VBox>
+    </center>
+    <bottom>
+        <HBox BorderPane.alignment="BOTTOM_CENTER">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10"/>
+            </padding>
+            <Label fx:id="status" text="New book added"/>
+        </HBox>
+    </bottom>
+</BorderPane>
