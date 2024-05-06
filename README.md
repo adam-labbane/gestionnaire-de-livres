@@ -63,15 +63,3 @@ Pour chaque action (ajout, édition, suppression), un email de notification est 
 
 Assurez-vous de configurer le fichier `config.properties` selon vos besoins pour les notifications par email et autres paramètres spécifiques.
 
-## Contribution
-
-Les contributions au projet sont les bienvenues. Veuillez suivre les procédures habituelles pour contribuer via des pull requests.
-
-## Licence
-
-[Inclure ici des informations sur la licence, si applicable]
-
-## Contact
-
-Pour plus d'informations ou assistance, veuillez contacter [Nom du Développeur] à [Email].
-
